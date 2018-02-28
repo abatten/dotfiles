@@ -1,23 +1,23 @@
-export PS1="\u @ \h \w \n --> "
-#export PS2="> "
-
-#export CLICOLOR=1
-#export LSCOLORS=ExFxBxDxCxegedabagacad
-
-#alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
-
-
+#   -----------------------------------------------------
+#               Make the terminal preeetty
+#   -----------------------------------------------------
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\n --> "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
-alias ls='ls -GFh'
-alias mkdir="mkdir -pv"
+
+#   -----------------------------------------------------
+#                Make the terminal better
+#   -----------------------------------------------------
+alias ls='ls -GFh'              #  Preferred 'ls' implementation
+alias mkdir="mkdir -pv"         #  Preferred 'mkdir' implementation
 alias edit="subl"               #  Open any file in SublimeText
+alias f="open -a Finder ./"     #  Open current directory in Finder
 
+#   -----------------------------------------------------
 #   extract:  Extract most know archives with one command
-
+#             Finding this changed my life.
 extract () {
     if [ -f $1 ] ; then
       case $1 in
