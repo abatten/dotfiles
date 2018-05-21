@@ -2,16 +2,25 @@
 " Adam Batten
 "   2018
 
-set nocompatible                   " Redundant, but whatever. Use vim not vi
+" Don't be compatible with vi
+set nocompatible
 
-colorscheme desert                 " Current colour scheme
-set background=dark                " Background colour
+" Enable syntax highlighting
+syntax enable
 
-syntax enable                      " Syntax.... duh
+" Colours
+colorscheme desert
+set background=dark
 
+" TAB Settings
 set tabstop=4                      " Display the tabs as this many spaces
 set softtabstop=4                  " The number of spaces a TAB is when editing
 set expandtab                      " Tabs ARE spaces
 
+" Display Settings
+set ruler                          " Always show position
+set showcmd                        " Show incomplete commands
 set number                         " Line numbers
-set backspace=indent,eol,start     " Fixed a big with deleting characters
+
+set backspace=indent,eol,start     " Backspace works like you would expect
+set mouse=a                        " Enable mouse
