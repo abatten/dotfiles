@@ -6,14 +6,26 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
+#   -----------------------------------------------------
+#if command -v tmux>/dev/null; then
+#  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+#fi
 
 #   -----------------------------------------------------
 #                Make the terminal better
 #   -----------------------------------------------------
-alias ls='ls -GFh'              #  Preferred 'ls' implementation
+alias ls="ls -GFh"              #  Preferred 'ls' implementation
+alias la="ls -GFha"             #  Show hidden files easier
 alias mkdir="mkdir -pv"         #  Preferred 'mkdir' implementation
-alias edit="subl"               #  Open any file in SublimeText
+alias edit="sublime"            #  Open any file in SublimeText
 alias f="open -a Finder ./"     #  Open current directory in Finder
+alias jn="jupyter-notebook"     #  Open jupyter notebook
+alias python="ipython"          #  Always open ipython over python
+
+#   -----------------------------------------------------
+alias sshg2="ssh abatten@g2.hpc.swin.edu.au -X -Y"
+alias sshraijin="ssh ab3463@raijin.nci.org.au -X -Y"
+alias sshozstar="ssh abatten@ozstar.swin.edu.au -X -Y"
 
 #   -----------------------------------------------------
 #   extract:  Extract most know archives with one command
@@ -39,7 +51,9 @@ extract () {
      fi
 }
 
+#ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/abatten/splash/giza
 
 # added by Anaconda3 5.1.0 installer
 export PATH="/Users/abatten/anaconda3/bin:$PATH"
