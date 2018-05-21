@@ -16,16 +16,13 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 #   -----------------------------------------------------
 alias ls="ls -GFh"              #  Preferred 'ls' implementation
 alias la="ls -GFha"             #  Show hidden files easier
+alias lla="ls -GFhla"           #  Show long hidden files
 alias mkdir="mkdir -pv"         #  Preferred 'mkdir' implementation
 alias edit="sublime"            #  Open any file in SublimeText
 alias f="open -a Finder ./"     #  Open current directory in Finder
 alias jn="jupyter-notebook"     #  Open jupyter notebook
 alias python="ipython"          #  Always open ipython over python
-
-#   -----------------------------------------------------
-alias sshg2="ssh abatten@g2.hpc.swin.edu.au -X -Y"
-alias sshraijin="ssh ab3463@raijin.nci.org.au -X -Y"
-alias sshozstar="ssh abatten@ozstar.swin.edu.au -X -Y"
+alias gpom="git push origin master"
 
 #   -----------------------------------------------------
 #   extract:  Extract most know archives with one command
