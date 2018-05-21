@@ -5,25 +5,6 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\n
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-
-#   -----------------------------------------------------
-#if command -v tmux>/dev/null; then
-#  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
-
-#   -----------------------------------------------------
-#                Make the terminal better
-#   -----------------------------------------------------
-alias ls="ls -GFh"              #  Preferred 'ls' implementation
-alias la="ls -GFha"             #  Show hidden files easier
-alias lla="ls -GFhla"           #  Show long hidden files
-alias mkdir="mkdir -pv"         #  Preferred 'mkdir' implementation
-alias edit="sublime"            #  Open any file in SublimeText
-alias f="open -a Finder ./"     #  Open current directory in Finder
-alias jn="jupyter-notebook"     #  Open jupyter notebook
-alias python="ipython"          #  Always open ipython over python
-alias gpom="git push origin master"
-
 #   -----------------------------------------------------
 #   extract:  Extract most know archives with one command
 #             Finding this changed my life.
@@ -48,7 +29,10 @@ extract () {
      fi
 }
 
-#ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+# Add bash aliases.
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
 
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/abatten/splash/giza
 
