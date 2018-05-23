@@ -9,7 +9,8 @@ set nocompatible
 syntax enable
 
 " Colours
-colorscheme desert
+"colorscheme desert
+colorscheme monokai
 set background=dark
 
 " TAB Settings
