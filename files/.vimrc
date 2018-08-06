@@ -20,12 +20,9 @@ set history=500
 " Enable syntax highlighting
 syntax enable
 
-try 
-    colorscheme monokai            " If monokai not installed use desert
-catch
-endtry
+colorscheme monokai            " If monokai not installed use desert
 
-set background=dark
+"set background=dark
 
 """"""""""""""""""""""
 " USER INTERFACE
@@ -55,6 +52,7 @@ set t_vb=
 set tm=500
 
 let mapleader = ","
+
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
