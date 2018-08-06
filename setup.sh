@@ -18,7 +18,8 @@ if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     echo " "
 else
-    echo "Pathogen found in: ~/.vim/autoload/pathogen.vim"
+    echo "FOUND: Pathogen"
+    echo "LOCATION: ~/.vim/autoload/pathogen.vim"
     echo " "
 fi
 
@@ -33,7 +34,9 @@ if [ ! -f ~/.vim/colors/monokai.vim ]; then
     wget https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim ~/.vim/colors
     echo " "
 else
-    echo "Found Monokai in: ~/.vim/colors/monokai.vim" 
+    echo "FOUND: Monokai"
+    echo "LOCATION: ~/.vim/colors/monokai.vim" 
+    echo " "
 fi
 
 # Download vim-flake8 if not installed
@@ -43,7 +46,9 @@ if [ ! -d ~/.vim/bundle/vim-flake8 ]; then
     git clone https://github.com/nvie/vim-flake8 ~/.vim/bundle/ 
     echo " "
 else
-    echo "Found vim-flake8 in: ~/.vim/bundle/vim-flake8"
+    echo "FOUND: vim-flake8"
+    echo "LOCATION: ~/.vim/bundle/vim-flake8"
+    echo " "
 fi
 
 PWD="`pwd`"
@@ -53,18 +58,28 @@ BASEDIR="`(cd \"$PWD\"; pwd -P)`"
 shopt -s dotglob
 
 OLD_DOTS=~/.old_dotfiles
-mkdir ~/.old_dotfiles
+
+if [ ! -d $OLD_DOTS ]; then
+    echo "NOT FOUND:" $OLD_DOTS
+    mkdir $OLD_DOTS
+    echo " "
+else
+    echo "FOUND:" $OLD_DOTS
+    echo " "
+fi
 
 DIR=$LOC/files
 for FILE in $DIR/*; do
-    echo FILE $FILE
     BASE=`basename $FILE`
-    echo BASE ~/$BASE
+    echo $BASE
     if [ -e ~/$BASE ]; then
-        echo "$BASE exists"
+        echo "FOUND $BASE"
+        echo "Moving $BASE to $OLD_DOTS" 
         mv ~/$BASE $OLD_DOTS
     fi
     ln -s $FILE ~/$BASE
+    echo "Created $BASE symlink"
+    echo " "
 done
 
 #ln -s ~/.dotfiles/setup2.sh ~/.testing_file
