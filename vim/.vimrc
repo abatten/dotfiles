@@ -3,7 +3,7 @@
 " Author: Adam Batten
 " Year:   2018
 """""""""""""""""""""""
-
+execute pathogen#infect()
 
 """"""""""""""""""""""
 " GENERAL
@@ -35,6 +35,9 @@ set background=dark
 set tabstop=4                      " Display the tabs as this many spaces
 set softtabstop=4                  " The number of spaces a TAB is when editing
 set expandtab                      " Tabs ARE spaces
+set shiftwidth=4
+set autoindent
+set smartindent
 
 " Display Settings
 set ruler                          " Always show position
