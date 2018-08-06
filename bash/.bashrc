@@ -1,25 +1,29 @@
+#########################
+# Name:    .bashrc
+# Author:  Adam Batten
+# Year:    2018
+#########################
 
-
-DARKGRAY='\e[1;30m'
-LIGHTRED='\e[1;31m'
-GREEN='\e[32m'
-YELLOW='\e[1;33m'
-LIGHTBLUE='\e[1;34m'
-NC='\e[m'
+# DARKGRAY='\e[1;30m'
+# LIGHTRED='\e[1;31m'
+# GREEN='\e[1;32m'
+# YELLOW='\e[1;33m'
+# LIGHTBLUE='\e[1;34m'
+# NC='\e[m'
 
 
 if [ $HOSTNAME == "katara" ]; then
-    PS1="\n$GREEN[\w] \n $YELLOW-> $NC"
+
+    PS1='\[\e[1;32m\][\w] \[\e[m\]'
+    # PS1='\[\e[1;31m\][\u @ \h] \e[1;32m\][\w] \[\e[m\]'
+
 else
-    PS1="$LIGHTBLUE[\u]@$LIGHTRED[\h] \n$GREEN[\w] \n $YELLOW-> $NC"
+    PS1='\[\e[1;31m\][\u @ \h] \e[1;32m\][\w] \[\e[m\]'
+
 fi
 
-PS1="\n$GREEN[\w] \n $YELLOW-> $NC"
-#$DARKGRAY($PCT\t$DARKGRAY)-($PCT\u$DARKGRAY)-($PCT\!$DARKGRAY)$YELLOW-> $NC"
+export PS1
 
-
-
-#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31;0m\]\w\[\033[m\]\n --> "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
