@@ -3,39 +3,33 @@
 SCRIPT=$(readlink -f $0)
 LOC=`dirname $SCRIPT`
 
+echo " "
+echo "------------------"
+echo "SETING UP DOTFILES"
+echo "------------------"
+echo " "
 
-#if [ -f ~/.vimrc ]; then
-#    printf "Found existing:"
-#    printf "Replacing: %-20s \t %s \n" "vimrc" "Yes"
-#else
-#    printf "%-20s \t %s \n" "vimrc" "No"
-#fi
-#
-#if [ -f ~/.bashrc ]; then
-#    printf "Replacing: %-20s \t %s \n" "bashrc" "Yes"
-#else
-#    printf "%-20s \t %s \n" "bashrc" "No"
-#fi
-#
-#if [ -f ~/.neditrc ]; then
-#    printf "Replacing: %-20s \t %s \n" "neditrc" "Yes"
-#else
-#    printf "Creating: %-10s \t %s \n" "neditrc" "No"
-#fi
-#
-#if [ -f ~/.bash_aliases ]; then
-#    printf "Replacing: %-20s \t %s \n" "bash_aliases" "Yes"
-#else
-#    printf "%-20s \t %s \n" "bashrc_aliases" " No"
-#fi
 
-#FILE=$LOC/.bashrc
-#
-#if [ -f $FILE ]; then
-#    printf "Found existing: %s \n" $FILE
-#else
-#    printf "Created link for: %s \n" $FILE
-#fi
+# Download pathogen for vim in not already installed
+if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
+    echo "Pathogen not found"
+    echo "Getting pathogen from: https://github.com/tpope/vim-pathogen"  
+    echo " "
+    mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+else
+    echo "Pathogen found in: ~/.vim/autoload/pathogen.vim"
+    echo " "
+fi
+
+# Download Monokai colour scheme for vim if not installed
+if [ ! -f ~/.vim/colors/monokai.vim ]; then
+    echo "Monokai colour scheme not found"
+    echo "Getting Monokai from: https://github.com/sickill/vim-monokai"
+    echo " "
+else
+    echo "Found Monokai in: ~/.vim/colors/monokai.vim" 
+fi
 
 PWD="`pwd`"
 BASEDIR="`(cd \"$PWD\"; pwd -P)`"
