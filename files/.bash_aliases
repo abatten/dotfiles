@@ -5,7 +5,11 @@
 #-------------------------------------------------------------
 # The 'ls' family
 #-------------------------------------------------------------
-alias ls="gls -Fh --color=auto --group-directories-first" 
+if [ $HOSTNAME == "katara" ]; then
+    alias ls="gls -Fh --color=auto --group-directories-first" 
+else
+    alias ls="ls -FH --color=auto"
+fi
 alias la="ls -GFha"                      #  Show hidden files easier
 alias lla="ls -GFhla"                    #  Show long hidden files
 alias lx="ls -lXB"                       #  Sort by extension

@@ -61,12 +61,11 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 if [ $HOSTNAME == "katara" ]; then
-    # added by Anaconda3 5.1.0 installer
     export PATH="/Users/abatten/anaconda3/bin:$PATH"
+    export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/abatten/splash/giza
 fi
 
-if [ $HOSTNAME == "farnarkle2" ]; then
-    # added by Miniconda3 5.1.0 installer
+if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
     export PATH="/home/abatten/miniconda3/bin:$PATH"
 
     module load gcc/7.3.0
@@ -74,8 +73,4 @@ if [ $HOSTNAME == "farnarkle2" ]; then
     module load python/3.6.4
 
     module list
-fi    
-
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/abatten/splash/giza
-
-# added by Anaconda3 5.1.0 installer
+fi
