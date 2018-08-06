@@ -14,9 +14,9 @@ echo " "
 if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
     echo "Pathogen not found"
     echo "Getting pathogen from: https://github.com/tpope/vim-pathogen"  
-    echo " "
     mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    echo " "
 else
     echo "Pathogen found in: ~/.vim/autoload/pathogen.vim"
     echo " "
@@ -26,6 +26,11 @@ fi
 if [ ! -f ~/.vim/colors/monokai.vim ]; then
     echo "Monokai colour scheme not found"
     echo "Getting Monokai from: https://github.com/sickill/vim-monokai"
+    if [ ! -d ~/.vim/colors ]; then
+        echo "Making ~/.vim/colors"
+        mkdir ~/.vim/colors
+    fi
+    wget https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim ~/.vim/colors
     echo " "
 else
     echo "Found Monokai in: ~/.vim/colors/monokai.vim" 
@@ -33,10 +38,6 @@ fi
 
 PWD="`pwd`"
 BASEDIR="`(cd \"$PWD\"; pwd -P)`"
-
-#for i in $BASEDIR/*; do
-#    echo $i
-#done 
 
 #  Use hidden files
 shopt -s dotglob
