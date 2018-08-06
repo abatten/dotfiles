@@ -15,28 +15,24 @@ alias lx="ls -lXB"                       #  Sort by extension
 #-------------------------------------------------------------
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
 alias mkdir="mkdir -pv"                  #  Preferred 'mkdir' implementation
 
 alias sudo="sudo "                       #  Fixes using sudo and aliases together
 
-
-alias edit="sublime"                     #  Open any file in SublimeText
+alias subl="sublime"                     #  Open any file in SublimeText
 alias f="open -a Finder ./"              #  Open current directory in Finder
 alias jn="jupyter-notebook"              #  Open jupyter notebook
 alias python="ipython"                   #  Always open ipython over python
 alias restart="source ~/.bashrc"         #  Quickly refresh shell 
 alias usedspace="du -ch -d 1"
 alias freespace="df -h"
-alias plz="sudo !!"
 
 alias grep="grep --color=auto -n"       #  Color grep output
 alias grepi="grep --color=auto -ni"     #  Ignore case of grep term
-
-
-
-if [ $HOSTNAME == "katara" ]; then
-    alias phdscripts="cd ~/PhD/scripts/aurora-analysis/notebooks"
-fi
 
 #-------------------------------------------------------------
 # Hide messy desktop during presentations
@@ -65,3 +61,8 @@ alias gcheck="git checkout"
 #-------------------------------------------------------------
 alias ip="ipconfig getifaddr en0"
 alias ipext="curl -s http://checkip.dyndns.org/ | grep -o '[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*.[0-9]*'"
+
+
+if [ $HOSTNAME == "katara" ]; then
+    alias phdscripts="cd ~/PhD/scripts/aurora-analysis/notebooks"
+fi
