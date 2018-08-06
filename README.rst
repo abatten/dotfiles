@@ -14,6 +14,7 @@ Install
 To install run this:
 
 ::
+
     git clone https://github.com/abatten/dotfiles
     cd  dotfiles
     source setup.sh
