@@ -25,8 +25,6 @@ try
 catch
 endtry
 
-set background=dark
-
 """"""""""""""""""""""
 " USER INTERFACE
 """"""""""""""""""""""
