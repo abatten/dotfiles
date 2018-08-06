@@ -36,6 +36,16 @@ else
     echo "Found Monokai in: ~/.vim/colors/monokai.vim" 
 fi
 
+# Download vim-flake8 if not installed
+if [ ! -d ~/.vim/bundle/vim-flake8 ]; then
+    echo "vim-flake8 not found"
+    echo "Getting vim-flake8 from: https://github.com/nvie/vim-flake8"
+    git clone https://github.com/nvie/vim-flake8 ~/.vim/bundle/ 
+    echo " "
+else
+    echo "Found vim-flake8 in: ~/.vim/bundle/vim-flake8"
+fi
+
 PWD="`pwd`"
 BASEDIR="`(cd \"$PWD\"; pwd -P)`"
 
