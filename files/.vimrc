@@ -20,12 +20,12 @@ set history=500
 " Enable syntax highlighting
 syntax enable
 
-try 
-    colorscheme monokai            " If monokai not installed use desert
-catch
-endtry
+"try 
+colorscheme monokai            " If monokai not installed use desert
+"catch
+"endtry
 
-set background=dark
+"set background=dark
 
 """"""""""""""""""""""
 " USER INTERFACE
