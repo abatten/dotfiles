@@ -29,15 +29,20 @@ alias usedspace="du -ch -d 1"
 alias freespace="df -h"
 alias plz="sudo !!"
 
-alias grep="grep --color=auto -n"       #  Colorise grep output
+alias grep="grep --color=auto -n"       #  Color grep output
 alias grepi="grep --color=auto -ni"     #  Ignore case of grep term
 
+
+
+if [ $HOSTNAME == "katara" ]; then
+    alias phdscripts="cd ~/PhD/scripts/aurora-analysis/notebooks"
+fi
 
 #-------------------------------------------------------------
 # Hide messy desktop during presentations
 #-------------------------------------------------------------
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false; killall Finder;"
-alias showdesktop="defaults write com.apple.finder CreateDeskto -bool true; killall Finder;"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true; killall Finder;"
 
 #-------------------------------------------------------------
 # Edit .bashrc and .vimrc quicker
@@ -52,6 +57,8 @@ alias vv="vim ~/.vimrc"
 alias gpom="git push origin master"
 alias ga="git add"
 alias gc="git commit"
+alias gb="git branch"
+alias gcheck="git checkout"
 
 #-------------------------------------------------------------
 # IP Address
