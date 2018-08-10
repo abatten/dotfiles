@@ -1,14 +1,14 @@
 #!/bin/bash
 
-SCRIPT=$(readlink -f $0)
-LOC=`dirname $SCRIPT`
-
 echo " "
 echo "------------------"
 echo "SETING UP DOTFILES"
 echo "------------------"
 echo " "
 
+########################################
+## DOWNLOAD PACKAGES IF NOT INSTALLED ##
+########################################
 
 # Download pathogen for vim in not already installed
 if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
@@ -51,14 +51,18 @@ else
     echo " "
 fi
 
-PWD="`pwd`"
-BASEDIR="`(cd \"$PWD\"; pwd -P)`"
+########################################
+## CREATE SYMBOLIC LINKS TO DOTFILES  ##
+########################################
 
 #  Use hidden files
 shopt -s dotglob
 
-OLD_DOTS=~/.old_dotfiles
+# Find the location that this script is being run
+LOC="`pwd`"
 
+# Create directory to store previous dotfiles
+OLD_DOTS=~/.old_dotfiles
 if [ ! -d $OLD_DOTS ]; then
     echo "NOT FOUND:" $OLD_DOTS
     mkdir $OLD_DOTS
@@ -68,16 +72,21 @@ else
     echo " "
 fi
 
+# Create symbolic links to files 
 DIR=$LOC/files
 for FILE in $DIR/*; do
-    BASE=`basename $FILE`
+    BASE=`basename $FILE` # BASE = the name of the file
     echo $BASE
-    if [ -e ~/$BASE ]; then
+
+    # If the dotfile already exists in home
+    # move the file to .old_dotfiles
+    if [ -e ~/$BASE ]; then 
         echo "FOUND $BASE"
         echo "Moving $BASE to $OLD_DOTS" 
         mv ~/$BASE $OLD_DOTS
     fi
-    ln -s $FILE ~/$BASE
+
+    ln -s $FILE ~/$BASE  # Symlink to home directory
     echo "Created $BASE symlink"
     echo " "
 done
