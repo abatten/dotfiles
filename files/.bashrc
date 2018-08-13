@@ -73,4 +73,6 @@ if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
     module load python/3.6.4
 
     module list
+
+    source activate py3
 fi
