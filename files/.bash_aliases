@@ -67,6 +67,10 @@ alias ip="ipconfig getifaddr en0"
 alias ipext="curl -s http://checkip.dyndns.org/ | grep -o '[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*.[0-9]*'"
 
 
+alias psi="python3 setup.py install"
+alias pssb="python3 setup.py sdist bdist_wheel"
+alias twineup="twine upload"
+
 if [ $HOSTNAME == "katara" ]; then
     alias phdscripts="cd ~/PhD/scripts/aurora-analysis/notebooks"
 fi
