@@ -1,9 +1,11 @@
 [user]
 	email = adamjbatten@gmail.com
-	name = abatten
+    name = abatten
+    username = abatten
 
 [core]
     editor = /usr/bin/vim
+    excludesfile = ~/.gitignore
 
 [color]
     ui = true

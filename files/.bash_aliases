@@ -6,9 +6,9 @@
 # The 'ls' family
 #-------------------------------------------------------------
 if [ $HOSTNAME == "katara" ]; then
-    alias ls="gls -Fh --color=auto --group-directories-first" 
+    alias ls="gls -Fhx --color=auto --group-directories-first" 
 else
-    alias ls="ls -FH --color=auto"
+    alias ls="ls -FHx --color=auto"
 fi
 alias la="ls -GFha"                      #  Show hidden files easier
 alias lla="ls -GFhla"                    #  Show long hidden files
@@ -30,7 +30,7 @@ alias sudo="sudo "                       #  Fixes using sudo and aliases togethe
 alias subl="sublime"                     #  Open any file in SublimeText
 alias f="open -a Finder ./"              #  Open current directory in Finder
 alias jn="jupyter-notebook"              #  Open jupyter notebook
-alias python="ipython"                   #  Always open ipython over python
+#alias python="ipython"                   #  Always open ipython over python
 alias restart="source ~/.bashrc"         #  Quickly refresh shell 
 alias usedspace="du -ch -d 1"
 alias freespace="df -h"
@@ -72,5 +72,5 @@ alias pssb="python3 setup.py sdist bdist_wheel"
 alias twineup="twine upload"
 
 if [ $HOSTNAME == "katara" ]; then
-    alias phdscripts="cd ~/PhD/scripts/aurora-analysis/notebooks"
+    alias borealis="cd ~/PhD/scripts/borealis/"
 fi

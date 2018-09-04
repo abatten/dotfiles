@@ -37,7 +37,7 @@ set smartindent
 " Display Settings
 set ruler                          " Always show position
 set showcmd                        " Show incomplete commands
-set number                         " Line numbers efeef 
+set number                         " Line numbers efeef
 
 set backspace=indent,eol,start     " Backspace works like you would expect
 set mouse=a                        " Enable mouse
@@ -55,8 +55,8 @@ let mapleader = ","
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

@@ -24,15 +24,15 @@ fi
 
 export PS1
 
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+#export CLICOLOR=1
+#export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # If coreutils in installed
-if brew list | grep coreutils > /dev/null ; then
-  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-  #alias ls='ls -F --show-control-chars --color=auto'
-  eval `gdircolors -b $HOME/.dir_colors`
-fi
+#if brew list | grep coreutils > /dev/null ; then
+#  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+#  #alias ls='ls -F --show-control-chars --color=auto'
+#  eval `gdircolors -b $HOME/.dir_colors`
+#fi
 
 extract () {
     if [ -f $1 ] ; then
@@ -60,11 +60,13 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+# If on laptop
 if [ $HOSTNAME == "katara" ]; then
     export PATH="/Users/abatten/anaconda3/bin:$PATH"
     export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/abatten/splash/giza
 fi
 
+# If on Ozstar
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
     export PATH="/home/abatten/miniconda3/bin:$PATH"
 
