@@ -51,6 +51,30 @@ else
     echo " "
 fi
 
+# Download better status bar if not installed
+if [ ! -d ~/.vim/bundle/lightline.vim ]; then
+    echo "lightline.vim not found"
+    echo "Getting lightline.vim from: https://github.com/itchyny/lightline.vim"
+     git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
+    echo " "
+else
+    echo "FOUND: lightline.vim"
+    echo "LOCATION: ~/.vim/bundle/lightline.vim"
+    echo " "
+fi
+
+# Download GitGutter for vim
+if [ ! -d ~/.vim/bundle/vim-gitgutter ]; then
+    echo "vim-gitgutter not found"
+    echo "Getting vim-gitgutter from: https://github.com/airblade/vim-gitgutter"
+     git clone https://github.com/airblade/vim-gitgutter ~/.vim/bundle/vim-gitgutter
+    echo " "
+else
+    echo "FOUND: vim-gitgutter"
+    echo "LOCATION: ~/.vim/bundle/vim-gitgutter"
+    echo " "
+fi
+
 ########################################
 ## CREATE SYMBOLIC LINKS TO DOTFILES  ##
 ########################################
