@@ -1,4 +1,4 @@
-#        .bash_aliases 
+#        .bash_aliases
 #        Adam Batten ~ 2018
 #
 #
@@ -6,7 +6,7 @@
 # The 'ls' family
 #-------------------------------------------------------------
 if [ $HOSTNAME == "katara" ]; then
-    alias ls="gls -Fhx --color=auto --group-directories-first" 
+    alias ls="gls -Fhx --color=auto --group-directories-first"
 else
     alias ls="ls -FHx --color=auto"
 fi
@@ -31,7 +31,7 @@ alias subl="sublime"                     #  Open any file in SublimeText
 alias f="open -a Finder ./"              #  Open current directory in Finder
 alias jn="jupyter-notebook"              #  Open jupyter notebook
 #alias python="ipython"                   #  Always open ipython over python
-alias restart="source ~/.bashrc"         #  Quickly refresh shell 
+alias restart="source ~/.bashrc"         #  Quickly refresh shell
 alias usedspace="du -ch -d 1"
 alias freespace="df -h"
 
@@ -55,6 +55,7 @@ alias vv="vim ~/.vimrc"
 # Git aliases
 #-------------------------------------------------------------
 alias gpom="git push origin master"
+alias gpo="git push origin"
 alias ga="git add"
 alias gc="git commit"
 alias gb="git branch"
