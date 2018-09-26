@@ -5,7 +5,7 @@
 """""""""""""""""""""""
 
 " Use pathogen plugin manager
-execute pathogen#infect()          
+execute pathogen#infect()
 
 """"""""""""""""""""""
 " GENERAL
@@ -51,6 +51,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Use for lightline package (pretty status bar)
+set laststatus=2                   " Show the status bar
+let g:lightline = {'colorscheme': 'wombat'} " Choose the colourscheme
+
 " Use , for custom commands
 let mapleader = ","
 
@@ -60,6 +64,8 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
+
+" Spell check
 map <leader>sc :setlocal spell<cr>
 
 set spelllang=en
