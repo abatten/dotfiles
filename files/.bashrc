@@ -55,6 +55,20 @@ extract () {
     fi
 }
 
+function nf () {
+    if [ $1 ] ; then
+        dir=$1
+        echo $dir
+    else
+        dir=.
+        pwd
+    fi
+
+    ls $dir | wc -l
+
+
+}
+
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
