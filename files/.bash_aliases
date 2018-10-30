@@ -38,7 +38,7 @@ alias freespace="df -h"
 alias grep="grep --color=auto -n"       #  Color grep output
 alias grepi="grep --color=auto -ni"     #  Ignore case of grep term
 
-alias nf="ls | wc -l"                   #  Number of files in a dir
+#alias nf="ls | wc -l"                   #  Number of files in a dir
 
 #-------------------------------------------------------------
 # Edit .bashrc and .vimrc quicker
