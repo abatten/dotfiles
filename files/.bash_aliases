@@ -38,11 +38,7 @@ alias freespace="df -h"
 alias grep="grep --color=auto -n"       #  Color grep output
 alias grepi="grep --color=auto -ni"     #  Ignore case of grep term
 
-#-------------------------------------------------------------
-# Hide messy desktop during presentations
-#-------------------------------------------------------------
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false; killall Finder;"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true; killall Finder;"
+alias nf="ls | wc -l"                   #  Number of files in a dir
 
 #-------------------------------------------------------------
 # Edit .bashrc and .vimrc quicker
@@ -74,4 +70,11 @@ alias twineup="twine upload"
 
 if [ $HOSTNAME == "katara" ]; then
     alias borealis="cd ~/PhD/scripts/borealis/"
+
+    #-------------------------------------------------------------
+    # Hide messy desktop during presentations
+    #-------------------------------------------------------------
+    alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false; killall Finder;"
+    alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true; killall Finder;"
+
 fi

@@ -77,4 +77,6 @@ if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
     module list
 
     source activate py3
+
+    alias sq="squeue | grep abatten"
 fi
