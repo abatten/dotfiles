@@ -86,7 +86,7 @@ if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
 
     module load gcc/7.3.0
     module load git/2.16.0
-    module load python/3.6.4
+    #module load python/3.6.4
 
     module list
 

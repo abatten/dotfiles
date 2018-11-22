@@ -10,8 +10,8 @@ if [ $HOSTNAME == "katara" ]; then
 else
     alias ls="ls -FHx --color=auto"
 fi
-alias la="ls -GFha"                      #  Show hidden files easier
-alias lla="ls -GFhla"                    #  Show long hidden files
+alias la="ls -Fha"                      #  Show hidden files easier
+alias lla="ls -Fhla"                    #  Show long hidden files
 alias lx="ls -lXB"                       #  Sort by extension
 
 #-------------------------------------------------------------
