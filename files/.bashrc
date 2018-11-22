@@ -70,18 +70,18 @@ function nf () {
 
 }
 
-# Add bash aliases.
+# Add bash aliases
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
-# If on laptop
+# Using Laptop
 if [ $HOSTNAME == "katara" ]; then
     export PATH="/Users/abatten/anaconda3/bin:$PATH"
     export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/abatten/splash/giza
 fi
 
-# If on Ozstar
+# Using Ozstar
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
     export PATH="/home/abatten/miniconda3/bin:$PATH"
 
