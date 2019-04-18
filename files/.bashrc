@@ -17,13 +17,18 @@ if [ $HOSTNAME == "katara" ]; then
 
     PS1='\[\e[1;32m\][\w] \[\e[m\]'
     # PS1='\[\e[1;31m\][\u @ \h] \e[1;32m\][\w] \[\e[m\]'
+    export PS1
+    #PS1='\[\e[1;31m\][\u @ \h] \e[1;32m\][\w] \[\e[m\]'
 
 else
-    PS1='\[\e[1;31m\][\u @ \h] \e[1;32m\][\w] \[\e[m\]'
+    #PS1="[\u@\h \W]\\$ "
+    #PS1='\[\e[1;31m\][\u @ \h] \e[1;32m\][\w] \[\e[m\]'
+    PS1="\[$(tput bold)\]\[\033[38;5;161m\][\u @ \h] \[$(tput sgr0)\]\[\033[38;5;46m\][\w] \[$(tput sgr0)\]"
+    export PS1
+    #PS1="\[\033[38;5;161m\][\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;161m\]@\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;161m\]\h]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;46m\][\w]\[$(tput sgr0)\]"
 
 fi
 
-export PS1
 
 #export CLICOLOR=1
 #export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -82,16 +87,9 @@ if [ $HOSTNAME == "katara" ]; then
 fi
 
 # Using Ozstar
-if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
-    export PATH="/home/abatten/miniconda3/bin:$PATH"
+#if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
 
-    module load gcc/7.3.0
-    module load git/2.16.0
-    #module load python/3.6.4
+    
 
-    module list
 
-    source activate py3
-
-    alias sq="squeue | grep abatten"
-fi
+#fi

@@ -75,7 +75,6 @@ alias psi="python3 setup.py install"
 alias pssb="python3 setup.py sdist bdist_wheel"
 alias twineup="twine upload"
 
-
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #               HOST SPECIFIC ALIASES
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -92,8 +91,8 @@ if [ $HOSTNAME == "katara" ]; then
 fi
 
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
-
-    alias sq="squeue | grep abatten"
+    alias sq="squeue --user abatten"
+    alias dsstoredel="find . -name '*.DS_Store' -type f -delete"
 
 fi
 
