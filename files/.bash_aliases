@@ -38,7 +38,7 @@ alias subl="sublime"                     #  Open any file in SublimeText
 alias f="open -a Finder ./"              #  Open current directory in Finder
 alias jn="jupyter-notebook"              #  Open jupyter notebook
 
-alias restart="source ~/.bashrc"         #  Quickly refresh shell
+alias restart="source ~/.bash_profile"         #  Quickly refresh shell
 
 alias usedspace="du -ch -d 1"
 alias freespace="df -h"
