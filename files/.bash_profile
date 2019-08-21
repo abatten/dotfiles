@@ -16,4 +16,4 @@ module load git/2.16.0
 module load openmpi/3.0.0
 module load hdf5/1.10.1
 
-module list
+#module list

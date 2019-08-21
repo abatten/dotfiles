@@ -91,8 +91,8 @@ if [ $HOSTNAME == "katara" ]; then
 fi
 
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
-    alias sq="squeue --user abatten"
+    alias sqs="squeue --user abatten"
     alias dsstoredel="find . -name '*.DS_Store' -type f -delete"
-
+    alias sq="squeue --user=abatten --format='%8A %16j %5C %11m %6D %3t %5M %20S %11Y %R'"
 fi
 
