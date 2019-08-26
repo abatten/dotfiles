@@ -46,6 +46,7 @@ alias freespace="df -h"
 alias grep="grep --color=auto -n"       #  Color grep output
 alias grepi="grep --color=auto -ni"     #  Ignore case of grep term
 
+alias unmount="umount -f"             #  Easy to unmount a drive from ssh
 alias ssh="ssh -X -Y"
 #alias nf="ls | wc -l"                   #  Number of files in a dir
 # Now moved to function in bashrc
@@ -74,8 +75,6 @@ alias ipext="curl -s http://checkip.dyndns.org/ | grep -o '[0-9][0-9]*.[0-9][0-9
 alias psi="python3 setup.py install"
 alias pssb="python3 setup.py sdist bdist_wheel"
 alias twineup="twine upload"
-
-
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #               HOST SPECIFIC ALIASES
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -89,6 +88,8 @@ if [ $HOSTNAME == "katara" ]; then
     alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false; killall Finder;"
     alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true; killall Finder;"
 
+
+    alias oz="ssh oz; tmux"
 fi
 
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then

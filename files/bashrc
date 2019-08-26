@@ -66,8 +66,6 @@ function nf () {
     fi
 
     ls $dir | wc -l
-
-
 }
 
 # Add bash aliases.
