@@ -3,7 +3,9 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
-    tmux attach-session -t ozstar || tmux new-session -s ozstar
+    if [ $HOSTNAME == "farnarkle1" ]; then
+        tmux attach-session -t ozstar || tmux new-session -s ozstar
+    fi
 fi
 
 module purge

@@ -83,7 +83,6 @@ fi
 # Using Laptop
 if [ $HOSTNAME == "katara" ]; then
     export PATH="/Users/abatten/anaconda3/bin:$PATH"
-    export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/abatten/splash/giza
 fi
 
 # Using Ozstar

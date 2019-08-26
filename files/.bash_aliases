@@ -54,6 +54,7 @@ alias ssh="ssh -X -Y"
 #-------------------------------------------------------------
 alias vb="vim ~/.bashrc"
 alias vba="vim ~/.bash_aliases"
+alias vbp="vim ~/.bash_profile"
 alias vv="vim ~/.vimrc"
 
 # Git aliases
