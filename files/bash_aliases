@@ -38,7 +38,7 @@ alias subl="sublime"                     #  Open any file in SublimeText
 alias f="open -a Finder ./"              #  Open current directory in Finder
 alias jn="jupyter-notebook"              #  Open jupyter notebook
 
-alias restart="source ~/.bashrc"         #  Quickly refresh shell
+alias restart="source ~/.bash_profile"         #  Quickly refresh shell
 
 alias usedspace="du -ch -d 1"
 alias freespace="df -h"
@@ -55,6 +55,7 @@ alias ssh="ssh -X -Y"
 #-------------------------------------------------------------
 alias vb="vim ~/.bashrc"
 alias vba="vim ~/.bash_aliases"
+alias vbp="vim ~/.bash_profile"
 alias vv="vim ~/.vimrc"
 
 # Git aliases
@@ -93,8 +94,8 @@ if [ $HOSTNAME == "katara" ]; then
 fi
 
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
-
-    alias sq="squeue | grep abatten"
-
+    alias sqs="squeue --user abatten"
+    alias dsstoredel="find . -name '*.DS_Store' -type f -delete"
+    alias sq="squeue --user=abatten --format='%8A %16j %5C %11m %6D %3t %5M %20S %11Y %R'"
 fi
 
