@@ -38,7 +38,7 @@ alias subl="sublime"                     #  Open any file in SublimeText
 alias f="open -a Finder ./"              #  Open current directory in Finder
 alias jn="jupyter-notebook"              #  Open jupyter notebook
 
-alias restart="source ~/.bashrc"         #  Quickly refresh shell
+alias restart="source ~/.bash_profile"         #  Quickly refresh shell
 
 alias usedspace="du -ch -d 1"
 alias freespace="df -h"
@@ -46,6 +46,7 @@ alias freespace="df -h"
 alias grep="grep --color=auto -n"       #  Color grep output
 alias grepi="grep --color=auto -ni"     #  Ignore case of grep term
 
+alias unmount="umount -f"             #  Easy to unmount a drive from ssh
 alias ssh="ssh -X -Y"
 #alias nf="ls | wc -l"                   #  Number of files in a dir
 # Now moved to function in bashrc
@@ -54,6 +55,7 @@ alias ssh="ssh -X -Y"
 #-------------------------------------------------------------
 alias vb="vim ~/.bashrc"
 alias vba="vim ~/.bash_aliases"
+alias vbp="vim ~/.bash_profile"
 alias vv="vim ~/.vimrc"
 
 # Git aliases
@@ -74,8 +76,6 @@ alias ipext="curl -s http://checkip.dyndns.org/ | grep -o '[0-9][0-9]*.[0-9][0-9
 alias psi="python3 setup.py install"
 alias pssb="python3 setup.py sdist bdist_wheel"
 alias twineup="twine upload"
-
-
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #               HOST SPECIFIC ALIASES
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -89,11 +89,13 @@ if [ $HOSTNAME == "katara" ]; then
     alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false; killall Finder;"
     alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true; killall Finder;"
 
+
+    alias oz="ssh oz; tmux"
 fi
 
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
-
-    alias sq="squeue | grep abatten"
-
+    alias sqs="squeue --user abatten"
+    alias dsstoredel="find . -name '*.DS_Store' -type f -delete"
+    alias sq="squeue --user=abatten --format='%8A %16j %5C %11m %6D %3t %5M %20S %11Y %R'"
 fi
 

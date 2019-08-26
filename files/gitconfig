@@ -1,5 +1,5 @@
 [user]
-	email = adamjbatten@gmail.com
+    email = adamjbatten@gmail.com
     name = abatten
     username = abatten
 
@@ -10,8 +10,14 @@
 [color]
     ui = true
     status = auto
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[alias]
+    unstage = reset -q HEAD --
+    br = branch
+    co = chechout
