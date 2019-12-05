@@ -81,6 +81,7 @@ fi
 # Using Laptop
 if [ $HOSTNAME == "katara" ]; then
     export PATH="/Users/abatten/anaconda3/bin:$PATH"
+    export PATH="/Users/abatten/dotfiles/tmux:$PATH"
 fi
 
 # Using Ozstar

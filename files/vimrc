@@ -64,10 +64,10 @@ let g:lightline = {
       \ }
 
 let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "katara" 
+if hostname == "katara"
     let g:kite_tab_complete=1
 
-endif    
+endif
 """""""""""""""""""""""""""""""""""""""""""
 ""              KEY MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""

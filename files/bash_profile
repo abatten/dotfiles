@@ -8,14 +8,26 @@ if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
     fi
 fi
 
-module purge
-module load anaconda3/5.0.1
 
-source activate py3
+# If on Ozstar, load the appropriate modules and python environment.
+if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
 
-module load gcc/7.3.0
-module load git/2.16.0
-module load openmpi/3.0.0
-module load hdf5/1.10.1
+    module purge
+    module load anaconda3/5.0.1
 
-#module list
+    source activate py3
+
+    module load gcc/7.3.0
+    module load git/2.16.0
+    module load openmpi/3.0.0
+    module load hdf5/1.10.1
+
+    #module list
+fi
+
+# If on katara load the python environment.
+#if [ $HOSTNAME == "katara" ]; then
+    
+    #source activate p3
+
+#fi
