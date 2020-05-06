@@ -2,6 +2,15 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
+# If on Ozstar, load TMUX
+if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
+
+    module purge
+    module load tmux/2.7
+    #module list
+fi
+
+#
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
     if [ $HOSTNAME == "farnarkle1" ]; then
         tmux attach-session -t ozstar || tmux new-session -s ozstar
@@ -12,7 +21,6 @@ fi
 # If on Ozstar, load the appropriate modules and python environment.
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
 
-    module purge
     module load anaconda3/5.0.1
 
     source activate py3
@@ -21,7 +29,7 @@ if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
     module load git/2.16.0
     module load openmpi/3.0.0
     module load hdf5/1.10.1
-
+    module load tmux/2.7
     #module list
 fi
 
