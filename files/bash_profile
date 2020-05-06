@@ -31,3 +31,5 @@ fi
     #source activate p3
 
 #fi
+# alias for latexdiff. Using standalone version: 
+alias latexdiff='~/build/latexdiff/latexdiff-so' 
