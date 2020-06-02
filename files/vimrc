@@ -170,6 +170,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 ""              FUNCTIONS
 """""""""""""""""""""""""""""""""""""""""""
 "
+"
+set relativenumber
 " Use ToggleNumber to toggle between number and relativenumber
 function! ToggleNumber()
     if(&relativenumber == 1)
