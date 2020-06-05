@@ -130,6 +130,7 @@ set foldlevel=99
 " Set how many lines for VIM to remember
 set history=10000
 
+set viminfo='500    " or whatever number you want
 """""""""""""""""""""""
 " COLOURS
 """""""""""""""""""""""

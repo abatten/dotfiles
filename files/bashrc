@@ -81,14 +81,25 @@ fi
 
 # Using Laptop
 if [ $HOSTNAME == "katara" ]; then
-    export PATH="/Users/abatten/anaconda3/bin:$PATH"
     export PATH="/Users/abatten/dotfiles/tmux:$PATH"
 fi
 
 # Using Ozstar
-#if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
+if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
 
+
+    function new_slurm () {
+    
+        if [ $1 ]; then
+            cp ~/blank_slurm_template.sh ./$1
+            vim $1
+        else
+            cp ~/blank_slurm_template.sh .
+            vim ./blank_slurm_template.sh
+
+        fi
+    }
     
 
 
-#fi
+fi
