@@ -53,6 +53,7 @@ alias ssh="ssh -X -Y"
 
 # Edit .bashrc and .vimrc quicker
 #-------------------------------------------------------------
+alias vim="nvim"
 alias vb="vim ~/.bashrc"
 alias vba="vim ~/.bash_aliases"
 alias vbp="vim ~/.bash_profile"
