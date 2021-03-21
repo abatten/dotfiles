@@ -34,6 +34,7 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
+Plug 'crusoexia/vim-monokai'
 "Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -248,5 +249,3 @@ if hostname == "katara"
     let g:kite_tab_complete=1
 
 endif
-
-

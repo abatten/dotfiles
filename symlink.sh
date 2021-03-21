@@ -140,10 +140,10 @@ for FILE in $DIR/*; do
 
     # If the dotfile already exists in home
     # move the file to .old_dotfiles
-    if [ -e ~/$BASE ]; then
+    if [ -e ~/.$BASE ]; then
         echo "FOUND $BASE"
         echo "Moving $BASE to $OLD_DOTS"
-        mv ~/$BASE $OLD_DOTS
+        mv ~/.$BASE $OLD_DOTS
     fi
 
     ln -s $FILE ~/"."$BASE  # Symlink to home directory

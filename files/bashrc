@@ -83,6 +83,9 @@ fi
 if [ $HOSTNAME == "katara" ]; then
     export PATH="/Users/abatten/dotfiles/tmux:$PATH"
 fi
+if [ $HOSTNAME == "korra" ]; then
+    export PATH="/home/adam/dotfiles/tmux:$PATH"
+fi
 
 # Using Ozstar
 if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
@@ -103,3 +106,22 @@ if [ $HOSTNAME == "farnarkle1" ] || [ $HOSTNAME == "farnarkle2" ]; then
 
 
 fi
+
+if [ $HOSTNAME == "korra" ]; then
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/adam/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/adam/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/adam/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/adam/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+        source activate py3
+fi
+
