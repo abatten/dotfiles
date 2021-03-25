@@ -1,34 +1,63 @@
 """""""""""""""""""""""
 " File:   .vimrc
 " Author: Adam Batten
-" Year:   2018
+" Year:   2021
 """""""""""""""""""""""
-
-" Don't be compatible with vi
-set nocompatible
-
-" Turn on syntax highlighting
-syntax enable
 
 " Find the hame of the computer
 let hostname = substitute(system('hostname'), '\n', '', '')
 
+set nocompatible                   " don't be compatible with vi
+syntax enable                      " Enable syntax highlighting
+colorscheme monokai                " Use monokai colourscheme
+set foldmethod=indent              " enable code folding
+set foldlevel=99
+set history=10000                  " How many lines to remember
+set viminfo='500    
+set expandtab                      " Tabs ARE spaces
+set softtabstop=4                  " The number of spaces a TAB is when editing
+set shiftwidth=4    
+set autoindent                     " Automatically apply indentation
+set smartindent
+set ruler                          " Always show position
+set showcmd                        " Show incomplete commands
+set number                         " Line numbers
+set relativenumber                 " Use relative line numbers
+set colorcolumn=72,80              " Put a vertical line at 72 and 80 chars
+set wildmenu                       " visual autocomplete for command menu
+set showmatch                      " highlight matching [{()}]
+set title
+set backspace=indent,eol,start     " Backspace works like you would expect
+set mouse=a                        " Enable mouse
+set noerrorbells visualbell t_vb=  " Disable sound and audible bell errors
+set vb
+set t_vb="
+set noerrorbells
+set novisualbell
+set ignorecase
+set smartcase
+set incsearch                      " Enable searching as you type
+set tm=500                         " leader key timeout to be 0.5s
+set spelllang=en
+set spellfile=~/dotfiles/.vim/spell/en.utf-8.add
+
+
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 """""""""""""""""""""""""""""""""""""""""""
 ""              PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
-"filetype off
-"set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'vim-scripts/indentpython.vim'
 "Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'vim-syntastic/syntastic'
-Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree' ", { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
@@ -41,6 +70,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'preservim/nerdcommenter'      " <leader>cc to comment, <leader>cA to add a comment at the end of a line
 "Plug 'klen/python-mode'
 
 call plug#end()
@@ -75,125 +105,27 @@ let g:lightline = {
       \ },
       \ }
 
-"let g:ycm_python_interpreter_path = ''
-"let g:ycm_python_sys_path = []
-"let g:ycm_extra_conf_vim_data = [
-"  \  'g:ycm_python_interpreter_path',
-"  \  'g:ycm_python_sys_path'
-"  \]
-"let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
-
-
-"let g:jedi#use_tabs_not_buffers = 1
-"let g:jedi#auto_vim_configuration = 0
-"autocmd FileType python setlocal completeopt-=preview
-
-"set omnifunc=jedi#completions
 """""""""""""""""""""""""""""""""""""""""""
-""              KEY MAPPINGS
+""              KEY REMAPPINGS
 """""""""""""""""""""""""""""""""""""""""""
+
 " Split Navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <C-p> :Gfiles<CR>  " Remap Ctrl + P to fzf search Gfiles
 
-nnoremap <C-p> :Gfiles<CR>
-
-" Try to prevent bad habits like using the arrow keys for movement. This is
-" not the only possible bad habit. For example, holding down the h/j/k/l keys
-" for movement, rather than using more efficient movement commands, is also a
-" bad habit. The former is enforceable through a .vimrc, while we don't know
-" how to prevent the latter.
-" Do this in normal mode...
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
 nnoremap <Down>  :echoe "Use j"<CR>
-" ...and in insert mode
-"inoremap <Left>  <ESC>:echoe "Use h"<CR>
-"inoremap <Right> <ESC>:echoe "Use l"<CR>
-"inoremap <Up>    <ESC>:echoe "Use k"<CR>
-"inoremap <Down>  <ESC>:echoe "Use j"<CR>
+inoremap <Left>  <ESC>:echoe "Use h"<CR>
+inoremap <Right> <ESC>:echoe "Use l"<CR>
+inoremap <Up>    <ESC>:echoe "Use k"<CR>
+inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
-
-
-
-" Enable Code Folding
-set foldmethod=indent
-set foldlevel=99
-
-"""""""""""""""""""""""""""""""""""""""""""
-""              GENERAL
-"""""""""""""""""""""""""""""""""""""""""""
-
-" Set how many lines for VIM to remember
-set history=10000
-
-set viminfo='500    " or whatever number you want
-"""""""""""""""""""""""
-" COLOURS
-"""""""""""""""""""""""
-syntax enable                      " Enable syntax highlighting
-colorscheme monokai                " Use monokai colourscheme
-
-""""""""""""""""""""""
-" USER INTERFACE
-""""""""""""""""""""""
-
-" TAB Settings
-set expandtab                      " Tabs ARE spaces
-set softtabstop=4                  " The number of spaces a TAB is when editing
-set shiftwidth=4
-
-" Automatically apply indentation
-set autoindent
-set smartindent
-
-" Display Settings
-set ruler                          " Always show position
-set showcmd                        " Show incomplete commands
-set number                         " Line numbers
-set relativenumber                 " Use relative line numbers
-set colorcolumn=72,80              " Put a vertical line at 72 and 80 chars
-
-"let &colorcolumn=join(range(72,79),",")
-"highlight ColorColumn ctermbg=33 ctermbg=43
-"let &colorcolumn=join(range(80,999),",")
-"highlight ColorColumn ctermbg=43
-set wildmenu            " visual autocomplete for command menu
-set showmatch           " highlight matching [{()}]
-
-set title
-
-" Make things easier
-set backspace=indent,eol,start     " Backspace works like you would expect
-set mouse=a                        " Enable mouse
-
-" Disable sound and audible bell errors
-set noerrorbells visualbell t_vb=
-set vb
-set t_vb="
-set noerrorbells
-set novisualbell
-
-" This setting makes search case-insensitive when all characters in the string
-" being searched are lowercase. However, the search becomes case-sensitive if
-" it contains any capital letters. This makes searching more convenient.
-set ignorecase
-set smartcase
-
-" Enable searching as you type, rather than waiting till you press enter.
-set incsearch
-
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" Set the timeout of the leader key to be 0.5s
-set tm=500
-
-" Use , for custom commands
 let mapleader = " "
 
 " Useful mappings for managing tabs
@@ -202,50 +134,26 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove<cr>
 map <leader>t<leader> :tabnext<cr>
-"  Open NERDTree with Ctrl + o
-map <leader>n :NERDTreeToggle<cr>
+
+"  Open NERDTree with Ctrl + nt
+map <leader>nt :NERDTreeToggle<cr>
+nnoremap <leader>no :NERDTreeFocus<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
+
 " Delete all white space with Ctrl + x
 map <leader>xw :%s/\s\+$//g<CR>
 
-map <leader>vs :vsplit<cr>
+map <leader>vs :vsplit
 map <leader>gd <Plug>(coc-definition)
 map <leader>gr <Plug>(coc-references)
 
 "Enable folding with the spacebar
 map <leader>f za
 
-"""""""""""""""""""""""""""""""""""""""""""
-""              SPELL CHECKING
-"""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
 map <leader>sc :setlocal spell!<cr>
 
-set spelllang=en
-set spellfile=~/dotfiles/.vim/spell/en.utf-8.add
 
-
-
-"""""""""""""""""""""""""""""""""""""""""""
-""              FUNCTIONS
-"""""""""""""""""""""""""""""""""""""""""""
-"
-"
-" Use ToggleNumber to toggle between number and relativenumber
-function! ToggleNumber()
-    if(&relativenumber == 1)
-        set norelativenumber
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-
-
-"""""""""""""""""""""""""""""""""""""""""""
-""         HOST SPECIFIC SETTINGS
-"""""""""""""""""""""""""""""""""""""""""""
-"
-
-if hostname == "katara"
-    let g:kite_tab_complete=1
-
-endif
